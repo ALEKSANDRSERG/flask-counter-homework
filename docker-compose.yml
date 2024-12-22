@@ -1,0 +1,13 @@
+services:
+  web:
+    build: .
+    ports:
+      - "5001:5000"
+    environment:
+      FLASK_ENV: development
+      MONGO_URI: mongodb://mongohost:27017/mydatabase
+      
+  mongohost:
+    image: "mongo:latest"
+    ports:
+      - "27017:27017"
